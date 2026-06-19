@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 
-const bucket = "main-bucket";
+const bucket = "swift-store";
 
 export const supabase = createClient(
   process.env.SUPABASE_URL as string,
@@ -10,7 +10,7 @@ export const supabase = createClient(
 export const uploadImage = async (image: File) => {
   const timestamp = Date.now();
   const newName = `${timestamp}-${image.name}`;
-  const { data } = await supabase.storage
+  const { data, error } = await supabase.storage
     .from(bucket)
     .upload(newName, image, { cacheControl: "3600" });
   if (!data) throw new Error("Image upload failed");
