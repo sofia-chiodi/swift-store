@@ -2,6 +2,8 @@
 
 import LoadingTable from "@/components/global/LoadingTable";
 
-function loading() {}
+function loading() {
+  return <LoadingTable />;
+}
 
 export default loading;
