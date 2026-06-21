@@ -176,7 +176,6 @@ export const updateProductImageAction = async (
     const validatedFile = validateWithZodSchema(imageSchema, { image });
     const fullPath = await uploadImage(validatedFile.image);
 
-    await deleteImage(product.image);
     await db.product.update({
       where: {
         id: productId,
@@ -185,6 +184,9 @@ export const updateProductImageAction = async (
         image: fullPath,
       },
     });
+
+    await deleteImage(product.image);
+
     revalidatePath(`/admin/products/${productId}/edit`);
     return { message: "Product Image updated successfully" };
   } catch (error) {

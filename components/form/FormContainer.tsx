@@ -25,11 +25,7 @@ function FormContainer({
       toast({ description: state.message });
     }
   }, [state, toast]);
-  return (
-    <form action={formAction} encType='multipart/form-data'>
-      {children}
-    </form>
-  );
+  return <form action={formAction}>{children}</form>;
 }
 
 export default FormContainer;
