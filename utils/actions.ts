@@ -233,8 +233,21 @@ export const toggleFavoriteAction = async (prevState: {
     }
     revalidatePath(pathname);
 
-    return { message: favoriteId ? "removed from faves" : "added to faves" };
+    return { message: favoriteId ? "Removed from faves" : "Added to faves" };
   } catch (error) {
     return renderError(error);
   }
+};
+
+export const fetchUserFavorites = async () => {
+  const user = await getAuthUser();
+  const favorites = await db.favorite.findMany({
+    where: {
+      clerkId: user.id,
+    },
+    include: {
+      product: true,
+    },
+  });
+  return favorites;
 };
