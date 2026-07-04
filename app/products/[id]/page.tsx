@@ -6,6 +6,8 @@ import FavoriteToggleButton from "@/components/products/FavoriteToggleButton";
 import AddToCart from "@/components/product/AddToCart";
 import ProductRating from "@/components/product/ProductRating";
 import ShareButton from "@/components/product/ShareButton";
+import SubmitReview from "@/components/reviews/SubmitReview";
+import ProductReview from "@/components/reviews/ProductReview";
 
 async function SingleProductPage({ params }: { params: { id: string } }) {
   const product = await fetchSingleProduct(params.id);
@@ -45,6 +47,8 @@ async function SingleProductPage({ params }: { params: { id: string } }) {
           <AddToCart productId={params.id} />
         </div>
       </div>
+      <ProductReview productId={params.id} />
+      <SubmitReview productId={params.id} />
     </section>
   );
 }
