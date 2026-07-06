@@ -1,7 +1,7 @@
 "use server";
 
 import db from "@/utils/db";
-import { currentUser } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import {
   imageSchema,
@@ -358,4 +358,17 @@ export const findExistingReviews = async (
       productId,
     },
   });
+};
+
+export const fetchCartItems = async () => {
+  const { userId } = auth();
+  const cart = await db.cart.findFirst({
+    where: {
+      clerkId: userId ?? "",
+    },
+    select: {
+      numItemsInCart: true,
+    },
+  });
+  return cart?.numItemsInCart || 0;
 };
