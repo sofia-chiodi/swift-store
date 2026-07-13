@@ -25,7 +25,7 @@ async function SingleProductPage({ params }: { params: { id: string } }) {
       <BreadCrumbs name={name} />
       <div className='mt-6 grid gap-y-8 lg:grid-cols-2 lg:gap-x-16'>
         {/* IMAGE FIRST COL */}
-        <div className='relative h-full'>
+        <div className='relative h-72 sm:h-96 lg:h-full min-h-[18rem]'>
           <Image
             src={image}
             alt={name}
@@ -37,8 +37,8 @@ async function SingleProductPage({ params }: { params: { id: string } }) {
         </div>
         {/* PRODUCT INFO SECOND COL */}
         <div>
-          <div className='flex gap-x-8 items-center'>
-            <h1 className='capitalize text-3xl font-bold'>{name}</h1>
+          <div className='flex flex-wrap gap-4 sm:gap-x-8 items-center'>
+            <h1 className='capitalize text-2xl sm:text-3xl font-bold'>{name}</h1>
             <div className='flex items-center gap-x-2'>
               <FavoriteToggleButton productId={params.id} />
               <ShareButton name={product.name} productId={params.id} />

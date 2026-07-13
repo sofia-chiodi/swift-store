@@ -34,8 +34,8 @@ function HeroCarrousel() {
             )
           })}
         </CarouselContent>
-        <CarouselNext />
-        <CarouselPrevious />
+        <CarouselNext className='right-3' />
+        <CarouselPrevious className='left-3' />
       </Carousel>
     </div>
   )

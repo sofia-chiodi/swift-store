@@ -34,7 +34,7 @@ function NavSearch() {
     <Input
       type='search'
       placeholder='Search product...'
-      className='max-w-xs dark:bg-muted'
+      className='w-full max-w-[10rem] sm:max-w-xs dark:bg-muted'
       onChange={(e) => {
         setSearch(e.target.value) // Control state value
         handleSearch(e.target.value) // Navigate to the product & provide query param
