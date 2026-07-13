@@ -1,18 +1,17 @@
-import hero1 from "@/public/images/hero1.jpg";
-import hero2 from "@/public/images/hero2.jpg";
-import hero3 from "@/public/images/hero3.jpg";
-import hero4 from "@/public/images/hero4.jpg";
+import hero1 from '@/public/images/hero-1.jpg'
+import hero2 from '@/public/images/hero-2.jpeg'
+import hero3 from '@/public/images/hero-3.jpg'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "../ui/carousel";
-import { Card, CardContent } from "../ui/card";
-import Image from "next/image";
+} from '../ui/carousel'
+import { Card, CardContent } from '../ui/card'
+import Image from 'next/image'
 
-const carouselImages = [hero1, hero2, hero3, hero4];
+const carouselImages = [hero1, hero2, hero3]
 
 function HeroCarrousel() {
   return (
@@ -27,19 +26,19 @@ function HeroCarrousel() {
                     <Image
                       src={image}
                       alt='Hero'
-                      className='w-full h-[24rem] rounded-md object-cover'
+                      className='w-full aspect-[4/3] rounded-md object-cover'
                     />
                   </CardContent>
                 </Card>
               </CarouselItem>
-            );
+            )
           })}
         </CarouselContent>
         <CarouselNext />
         <CarouselPrevious />
       </Carousel>
     </div>
-  );
+  )
 }
 
-export default HeroCarrousel;
+export default HeroCarrousel
