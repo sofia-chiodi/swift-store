@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "npx prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "@clerk/nextjs": "5.1.4",
@@ -43,12 +44,15 @@
     "zod": "3.23.8"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
     "@faker-js/faker": "^8.4.1",
     "@types/node": "20",
     "@types/react": "18",
     "@types/react-dom": "18",
     "eslint": "8",
     "eslint-config-next": "14.2.35",
+    "husky": "^9.1.7",
     "postcss": "8",
     "prisma": "7.8.0",
     "tailwindcss": "3.4.1",
