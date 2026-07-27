@@ -10,6 +10,9 @@ import { ClerkProvider } from "@clerk/nextjs";
 export const metadata: Metadata = {
   title: "Swifite Store",
   description: "A swiftie store built with Next.js",
+  verification: {
+    google: "2qiqAo2EnRKZsEWD_iK_nf_REoukbAdiBsGBFhQO7ZA",
+  },
 };
 
 export default function RootLayout({
