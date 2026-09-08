@@ -83,7 +83,7 @@ Clerk handles identity; middleware gates protected and admin routes.
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/<your-username>/swift-store.git
+git clone https://github.com/<sofia-chiodi>/swift-store.git
 cd swift-store
 npm install
 ```
